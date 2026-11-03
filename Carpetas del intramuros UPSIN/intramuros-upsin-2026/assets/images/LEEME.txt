@@ -1,0 +1,1 @@
+Carpeta reservada para recursos oficiales (images). Vacía en la versión de demostración.

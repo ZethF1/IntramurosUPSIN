@@ -1,0 +1,1 @@
+Carpeta reservada para recursos oficiales (logos). Vacía en la versión de demostración.

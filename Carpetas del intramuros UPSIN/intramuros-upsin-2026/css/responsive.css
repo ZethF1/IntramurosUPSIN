@@ -1,0 +1,108 @@
+/* ==========================================================================
+   responsive.css — ADAPTACIÓN A LAPTOP, TABLET Y TELÉFONO
+   ========================================================================== */
+
+/* Laptop pequeña */
+@media (max-width: 1180px) {
+  .main-nav a { padding: 9px 10px; font-size: 0.9rem; }
+  .main-nav a .icon { display: none; }
+  .team-grid { grid-template-columns: repeat(4, 1fr); }
+  .record-grid { grid-template-columns: repeat(3, 1fr); }
+}
+
+/* Tablet: menú desplegable */
+@media (max-width: 960px) {
+  .nav-toggle { display: grid; }
+  .main-nav {
+    position: absolute; left: 0; right: 0; top: 100%;
+    background: rgba(7, 11, 22, 0.98); border-bottom: 1px solid var(--line);
+    max-height: 0; overflow: hidden; visibility: hidden;
+    transition: max-height 0.3s var(--ease), visibility 0.3s;
+  }
+  .site-header.is-open .main-nav { max-height: 420px; visibility: visible; }
+  .site-header.is-open .nav-toggle__open { display: none; }
+  .site-header.is-open .nav-toggle__close { display: block; }
+  .main-nav ul { flex-direction: column; padding: 10px 16px 16px; }
+  .main-nav a { padding: 13px 14px; font-size: 1rem; }
+  .main-nav a .icon { display: block; }
+
+  .stat-cards { grid-template-columns: repeat(2, 1fr); }
+  .two-col { grid-template-columns: 1fr; gap: 40px; }
+  .access-grid { grid-template-columns: repeat(2, 1fr); }
+  .info-grid { grid-template-columns: repeat(2, 1fr); }
+  .team-grid { grid-template-columns: repeat(3, 1fr); }
+  .spotlights { grid-template-columns: 1fr; }
+  .spotlight { grid-template-areas: 'label label' 'emb name' 'emb team' 'value value'; }
+  .hero__court { width: 190px; }
+  .site-footer__inner { flex-direction: column; }
+  .site-footer__note { text-align: left; }
+
+  /* Banner: dos filas de cinco equipos para que sigan legibles */
+  .tp-panels { grid-template-columns: repeat(5, 1fr); height: auto; }
+  .tp-panel a { aspect-ratio: 3 / 4.4; height: auto; }
+  .tp-panel + .tp-panel a { border-left: 0; }
+  .tp-panel a { border-right: 4px solid #04050c; border-bottom: 4px solid #04050c; }
+  .tp-panel:nth-child(5n) a { border-right: 0; }
+  .tp-panel:nth-child(n + 6) a { border-bottom: 0; }
+  .tp-panel__slot .emblem { width: 52px; }
+  .tp-panel__name { font-size: 0.85rem; }
+}
+
+/* Teléfono */
+@media (max-width: 640px) {
+  :root { --header-h: 60px; }
+  .container { padding-inline: 16px; }
+  .section { margin-top: 34px; }
+  .demo-ribbon { font-size: 0.75rem; justify-content: flex-start; text-align: left; }
+  .brand__logo-slot { width: 40px; height: 40px; }
+  .brand__text strong { font-size: 1.1rem; }
+
+  .hero__court { display: none; }
+  .hero__actions .btn { flex: 1; }
+  .stat-cards { gap: 10px; }
+  .stat-card { flex-direction: column; gap: 8px; padding: 14px; }
+  .stat-card__value { font-size: 1.9rem; }
+  .access-grid { grid-template-columns: 1fr; }
+  .access-card { min-height: 0; }
+  .info-grid { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .team-card__art { height: 130px; }
+  .team-card__name { font-size: 1.15rem; }
+  .record-grid { grid-template-columns: repeat(2, 1fr); }
+  .leader-minis { grid-template-columns: 1fr; }
+  .leader-grid { grid-template-columns: 1fr; }
+  .match-grid { grid-template-columns: 1fr; }
+  .cta-banner { flex-direction: column; align-items: flex-start; }
+  .cta-banner .btn { width: 100%; }
+  .cta-banner__stripes { width: 80%; opacity: 0.25; }
+
+  .team-hero__inner { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .team-hero__emblem .emblem { width: 84px; height: 84px; }
+
+  .toolbar, .filters { flex-direction: column; align-items: stretch; }
+  .select { width: 100%; }
+  .segmented { display: flex; }
+  .segmented__btn, .segmented__opt { flex: 1; }
+  .segmented__opt span { width: 100%; justify-content: center; }
+  .segmented__btn { justify-content: center; }
+  .section-head__extra { width: 100%; }
+  .section-head__extra .segmented { width: 100%; }
+
+  .data-table th, .data-table td { padding: 10px 8px; font-size: 0.9rem; }
+  .standings .col-pos { width: 48px; }
+  .team-cell .emblem { width: 24px; height: 24px; }
+
+  .tp-panel__slot-label { display: none; }
+  .tp-panel__slot .emblem { width: 40px; }
+  .tp-panel a { padding-top: 10px; aspect-ratio: auto; min-height: 160px; }
+  .tp-panel__name { font-size: 0.72rem; line-height: 1.05; padding: 5px 1px; white-space: normal; }
+  .tp-panel__word { display: block; font-size: 0.6rem; opacity: 0.8; }
+  .tp-panel__jersey text { font-size: 34px; }
+
+  .match-card__foot .demo-tag { margin-left: 0; }
+}
+
+@media (max-width: 380px) {
+  .stat-cards { grid-template-columns: 1fr; }
+  .team-grid { grid-template-columns: 1fr; }
+}
